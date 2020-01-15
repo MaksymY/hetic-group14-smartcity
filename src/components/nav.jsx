@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { color } from "../style/const";
@@ -24,15 +24,26 @@ const NavLogo = styled.img`
 `;
 
 export const Nav = () => {
+  let [active, setActive] = useState(true);
   return (
     <NavStyled>
       <NavList>
         <NavLogo src={Image} />
         <Link to="/">
-          <NavElement>Dans Ma Rue</NavElement>
+          <NavElement
+            style={active ? { fontWeight: "bold" } : {}}
+            onClick={() => setActive((active = true))}
+          >
+            Dans Ma Rue
+          </NavElement>
         </Link>
         <Link to="/jo">
-          <NavElement>Épreuves des JO</NavElement>
+          <NavElement
+            onClick={() => setActive((active = false))}
+            style={!active ? { fontWeight: "bold" } : {}}
+          >
+            Épreuves des JO
+          </NavElement>
         </Link>
       </NavList>
     </NavStyled>
