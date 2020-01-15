@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { color } from "../style/const";
-import Image from "../assets/logo.png";
+import Image from "../assets/logo.svg";
 
 const NavStyled = styled.nav`
   display: flex;
