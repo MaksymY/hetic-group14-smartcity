@@ -1,12 +1,20 @@
 import React from "react";
-import "./App.css";
-import { Nav } from "../src/components/nav";
+import { Nav } from "./components/Nav";
+import { DansMaRue } from "../src/views/DansMaRue";
+import { JoEpreuve } from "../src/views/JoEpreuve";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <Nav />
-    </div>
+    <Router>
+      <div className="App">
+        <Nav />
+        <Switch>
+          <Route path="/" exact component={DansMaRue} />
+          <Route path="/jo" component={JoEpreuve} />
+        </Switch>
+      </div>
+    </Router>
   );
 }
 

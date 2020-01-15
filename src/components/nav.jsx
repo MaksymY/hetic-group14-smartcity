@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import { color } from "../style/const";
 import Image from "../assets/logo.png";
 
@@ -27,8 +28,12 @@ export const Nav = () => {
     <NavStyled>
       <NavList>
         <NavLogo src={Image} />
-        <NavElement>Dans Ma Rue</NavElement>
-        <NavElement>Épreuves des JO</NavElement>
+        <Link to="/">
+          <NavElement>Dans Ma Rue</NavElement>
+        </Link>
+        <Link to="/jo">
+          <NavElement>Épreuves des JO</NavElement>
+        </Link>
       </NavList>
     </NavStyled>
   );
