@@ -1,5 +1,5 @@
 import React from "react";
-import { Nav } from "./components/Nav";
+import { Nav } from "./components/Nav"
 import { DansMaRue } from "../src/views/DansMaRue";
 import { JoEpreuve } from "../src/views/JoEpreuve";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";

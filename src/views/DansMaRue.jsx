@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { color } from "../style/const";
 import mapParis from "../assets/map.svg";
 import { Filter } from "../components/Filter";
+import {ContainerDansMaRue} from "../components/DansMaRue/ContainerDansMaRue";
 
 const Content = styled.main`
   display: flex;
@@ -19,9 +20,12 @@ const Map = styled.img`
 
 export const DansMaRue = () => {
   return (
+    <>
     <Content>
       <Map src={mapParis} />
       <Filter />
     </Content>
+     <ContainerDansMaRue />
+    </>
   );
 };
