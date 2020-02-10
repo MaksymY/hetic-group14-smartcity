@@ -9,10 +9,21 @@ const NavStyled = styled.nav`
   align-items: center;
   height: 60px;
   background-color: ${color.bluePrimary};
+
+  ul {
+    display: inherit;
+  }
+
+  li {
+    color: white;
+    list-style-type: none;
+    margin: 0 50px;
+    cursor: pointer;
+  }
 `;
-const NavList = styled.ul`
+/* const NavList = styled.ul`
   display: inherit;
-`;
+`; */
 const NavElement = styled.li`
   color: white;
   list-style-type: none;
@@ -27,25 +38,25 @@ export const Nav = () => {
   let [active, setActive] = useState(true);
   return (
     <NavStyled>
-      <NavList>
+      <ul>
         <NavLogo src={Image} />
         <Link to="/">
-          <NavElement
+          <li
             style={active ? { fontWeight: "bold" } : {}}
             onClick={() => setActive((active = true))}
           >
             Dans Ma Rue
-          </NavElement>
+          </li>
         </Link>
         <Link to="/jo">
-          <NavElement
+          <li
             onClick={() => setActive((active = false))}
             style={!active ? { fontWeight: "bold" } : {}}
           >
             Épreuves des JO
-          </NavElement>
+          </li>
         </Link>
-      </NavList>
+      </ul>
     </NavStyled>
   );
 };
