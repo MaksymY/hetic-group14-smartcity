@@ -8,6 +8,7 @@ width: 100%;
 height: 100px;
 box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 padding-left: 10px;
+font-family: 'Seravek';
 
 &:hover {
     cursor: pointer;
@@ -18,6 +19,7 @@ h3 {
 	font-size: 16px;
 	color: ${color.bluePrimary};
 	margin: 5px 0 5px 0;
+	font-weight: bold;
 }
 
 
@@ -29,7 +31,8 @@ p {
 
 span {
 	font-size: 11px;
-	color: ${color.brandColor}
+	color: ${color.brandColor};
+	font-weight: 300;
 }
 `;
 

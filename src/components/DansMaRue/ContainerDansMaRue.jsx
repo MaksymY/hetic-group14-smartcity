@@ -9,6 +9,7 @@ const Container = styled.section`
   flex-direction: column;
   margin-bottom: 40px;
   justify-content: center;
+  padding-left: 44px;
 `
 
 const ContainerCard = styled.div`
@@ -20,8 +21,10 @@ const ContainerCard = styled.div`
 const Title = styled.h3`
   align-self: left;
   font-size: 16px;
-  padding: 24px 24px;
+  padding: 24px 44px;
   color: ${color.bluePrimary};
+  font-family: 'Seravek';
+  font-weight: 300;
 `;
 
 export const ContainerDansMaRue = () => {

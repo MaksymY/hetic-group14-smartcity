@@ -9,6 +9,7 @@ const NavStyled = styled.nav`
   align-items: center;
   height: 60px;
   background-color: ${color.bluePrimary};
+  font-family: 'Seravek';
 
   ul {
     display: inherit;
