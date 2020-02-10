@@ -1,9 +1,9 @@
 import React from "react";
-import "../assets/icons.svg";
+import icons from "../assets/icons.svg";
 
-const Icon = props => (
+const Icon = (props) => (
   <svg>
-    <use xlinkHref={`#${props.icon}`} />
+    <use xlinkHref={`${icons}#${props.icon}`} />
   </svg>
 );
 
