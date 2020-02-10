@@ -4,7 +4,8 @@ import { color } from "../style/const";
 import mapParis from "../assets/map.svg";
 import { Filter } from "../components/Filter";
 import { ContainerDansMaRue } from "../components/DansMaRue/ContainerDansMaRue";
-/* import { LegendsPopulation } from "../components/LegendsPopulation"; */
+import { LegendsPopulation } from "../components/LegendsPopulation";
+import { SmallCalendar } from "../components/SmallCalendar";
 
 const Content = styled.main`
   display: flex;
@@ -22,12 +23,13 @@ const Map = styled.img`
 export const DansMaRue = () => {
   return (
     <>
-    <Content>
-      <Filter />
-      <Map src={mapParis} />
-      {/* <LegendsPopulation /> */}
-    </Content>
-     <ContainerDansMaRue />
+      <Content>
+        <Filter />
+        <Map src={mapParis} />
+        <LegendsPopulation />
+        <SmallCalendar />
+      </Content>
+      <ContainerDansMaRue />
     </>
   );
 };

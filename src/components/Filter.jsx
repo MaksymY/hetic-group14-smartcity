@@ -43,6 +43,7 @@ const IconStyle = styled.svg`
   right: 5px;
   top: 0;
   transition: 0.5s;
+  stroke: #ffff;
 `;
 
 export const Filter = () => {
