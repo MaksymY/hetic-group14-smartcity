@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { color } from "../style/const";
-import Icon from "../components/Icon";
 import icons from "../assets/icons.svg";
 
 const Content = styled.section`

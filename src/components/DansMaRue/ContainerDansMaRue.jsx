@@ -4,13 +4,14 @@ import {color} from "../../style/const"
 import {DansMaRueCard} from "../DansMaRue/DansMaRueCard"
 
 
+
 const Container = styled.section`
   display: flex;
   flex-direction: column;
   margin-bottom: 40px;
   justify-content: center;
   padding-left: 44px;
-`
+`;
 
 const ContainerCard = styled.div`
   display: grid;

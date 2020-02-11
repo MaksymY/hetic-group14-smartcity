@@ -22,15 +22,6 @@ const NavStyled = styled.nav`
     cursor: pointer;
   }
 `;
-/* const NavList = styled.ul`
-  display: inherit;
-`; */
-const NavElement = styled.li`
-  color: white;
-  list-style-type: none;
-  margin: 0 50px;
-  cursor: pointer;
-`;
 const NavLogo = styled.img`
   margin: 0 140px 0 30px;
 `;
@@ -55,7 +46,7 @@ export const Nav = () => {
             style={!active ? { fontWeight: "bold" } : {}}
           >
             Épreuves des JO
-          </li>
+              </li>
         </Link>
       </ul>
     </NavStyled>

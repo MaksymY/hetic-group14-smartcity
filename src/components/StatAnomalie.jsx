@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { color } from "../style/const";
-import icons from "../assets/icons.svg";
 import AnomalieData from "../data/AnomalieData";
 
 const ContentAnomalie = styled.section`
@@ -47,7 +46,7 @@ const ExplaineAnomalie = styled.p`
 `;
 
 export const StatAnomalie = () => {
-    
+
     const totalAnomalie = () => {
       return AnomalieData.reduce((acc, val) => acc + val.number, 0);
     }
@@ -58,7 +57,7 @@ export const StatAnomalie = () => {
             return "#FFE664";
           case "Très Génant":
             return "#FFBC7E";
-          default: 
+          default:
             return "#FF8181";
         }
     }
@@ -78,9 +77,8 @@ export const StatAnomalie = () => {
       <GraphAnomalie>
         {AnomalieData.map((value, index) => {
           return (
-            <Anomalie>
+            <Anomalie key={index}>
               <AnomalieStat
-                key={index}
                 style={{ backgroundColor: colorAnomalie(value.status), width: `${sizeAnomalie(value.number)}%`}}
               ></AnomalieStat>
               <p style={{background: colorAnomalie(value.status)}}>

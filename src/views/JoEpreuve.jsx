@@ -1,19 +1,23 @@
 import React from "react";
 import styled from "styled-components";
 import { color } from "../style/const";
-import Icon from "../components/Icon";
+import {SearchCalendar} from "../components/OlympicGamesEvent/SearchCalendar";
+import {CalendarEvent} from "../components/OlympicGamesEvent/CalendarEvent"
 
 const Content = styled.main`
   background-color: ${color.backgroundPrimary};
   width: 100vw;
   height: 100vh;
+  justify-content: center;
+  max-width: 1300px;
+  margin: 0 auto;
 `;
 
 export const JoEpreuve = () => {
   return (
     <Content>
-      <h2> JO Epreuve</h2>
-      <Icon icon="compass" />
+      <SearchCalendar />
+      <CalendarEvent />
     </Content>
   );
 };
