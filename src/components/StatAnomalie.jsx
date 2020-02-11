@@ -64,9 +64,7 @@ export const StatAnomalie = () => {
     }
 
     const sizeAnomalie = (value) => {
-      let total = totalAnomalie();
-      let onePercent = total / 100;
-      return value / onePercent;
+      return ( value * 100 ) / totalAnomalie();
     }
 
   return (
@@ -85,7 +83,7 @@ export const StatAnomalie = () => {
                 key={index}
                 style={{ backgroundColor: colorAnomalie(value.status), width: `${sizeAnomalie(value.number)}%`}}
               ></AnomalieStat>
-              <p>
+              <p style={{background: colorAnomalie(value.status)}}>
                 {value.number} {value.status}
               </p>
             </Anomalie>
