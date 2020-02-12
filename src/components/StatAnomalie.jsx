@@ -25,6 +25,10 @@ const Anomalie = styled.div`
   display: flex;
   margin: 20px 20px 0 0;
   align-items: center;
+
+  p {
+    background-position: center 50px;
+  }
 `;
 
 const AnomalieStat = styled.div`
@@ -46,32 +50,31 @@ const ExplaineAnomalie = styled.p`
 `;
 
 export const StatAnomalie = () => {
+  const totalAnomalie = () => {
+    return AnomalieData.reduce((acc, val) => acc + val.number, 0);
+  };
 
-    const totalAnomalie = () => {
-      return AnomalieData.reduce((acc, val) => acc + val.number, 0);
+  const colorAnomalie = (value) => {
+    switch (value) {
+      case "Génant":
+        return "#FFE664";
+      case "Très Génant":
+        return "#FFBC7E";
+      default:
+        return "#FF8181";
     }
+  };
 
-    const colorAnomalie = (value) => {
-        switch(value) {
-          case "Génant":
-            return "#FFE664";
-          case "Très Génant":
-            return "#FFBC7E";
-          default:
-            return "#FF8181";
-        }
-    }
-
-    const sizeAnomalie = (value) => {
-      return ( value * 100 ) / totalAnomalie();
-    }
+  const sizeAnomalie = (value) => {
+    return (value * 100) / totalAnomalie();
+  };
 
   return (
     <ContentAnomalie>
       <h1>Visualisation en direct</h1>
       <ExplaineAnomalie>
-        Durant les 24 dernières heures, <span>{totalAnomalie()}</span> anomalies ont
-        été signalées dans les rues de Paris.
+        Durant les 24 dernières heures, <span>{totalAnomalie()}</span> anomalies
+        ont été signalées dans les rues de Paris.
       </ExplaineAnomalie>
       <h2>Dont ...</h2>
       <GraphAnomalie>
@@ -79,9 +82,12 @@ export const StatAnomalie = () => {
           return (
             <Anomalie key={index}>
               <AnomalieStat
-                style={{ backgroundColor: colorAnomalie(value.status), width: `${sizeAnomalie(value.number)}%`}}
+                style={{
+                  backgroundColor: colorAnomalie(value.status),
+                  width: `${sizeAnomalie(value.number)}%`,
+                }}
               ></AnomalieStat>
-              <p style={{background: colorAnomalie(value.status)}}>
+              <p style={{ background: colorAnomalie(value.status) }}>
                 {value.number} {value.status}
               </p>
             </Anomalie>
