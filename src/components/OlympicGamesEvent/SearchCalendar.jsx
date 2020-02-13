@@ -18,6 +18,7 @@ const Content = styled.div`
     display: flex;
 
     input {
+      width: 260px;
       outline: 0;
       border-width: 0 0 1px;
       border-color: ${color.brandColor};

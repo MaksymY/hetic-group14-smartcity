@@ -55,12 +55,16 @@ const borderColor = value => {
   }
 };
 
-export const Calendar = () => {
+export const Calendar = ({ isOpen, setCurrentId, setIsOpen }) => {
   return (
     <Content>
       {CalendarData.map((value, index) => {
         return (
           <div
+            onClick={() => {
+              setCurrentId(value.id);
+              setIsOpen(false);
+            }}
             key={index}
             className={value.display ? "hidden" : ""}
             style={{ borderColor: borderColor(value.event) }}
