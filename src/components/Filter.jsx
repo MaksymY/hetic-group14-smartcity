@@ -61,14 +61,14 @@ export const Filter = () => {
         <label>
           <input
             type="checkbox"
-            onChange={(e) => setCheckState(e.target.checked)}
+            onChange={e => setCheckState(e.target.checked)}
           />
           <p>Densité de pop</p>
         </label>
         <label>
           <input
             type="checkbox"
-            onChange={(e) => setCheckState(e.target.checked)}
+            onChange={e => setCheckState(e.target.checked)}
           />
           <p>Épreuves de JO</p>
         </label>

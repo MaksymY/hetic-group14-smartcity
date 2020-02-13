@@ -14,7 +14,7 @@ const ContentHeader = styled.main`
   background-color: ${color.backgroundPrimary};
   width: 100vw;
   height: calc(100vh - 60px);
-  font-family: 'Seravek';
+  font-family: "Seravek";
 `;
 
 const Map = styled.img`
@@ -23,7 +23,7 @@ const Map = styled.img`
 `;
 
 const ContentGraph = styled.section`
-  font-family: 'Seravek';
+  font-family: "Seravek";
 `;
 
 export const DansMaRue = () => {

@@ -1,8 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import { color } from "../style/const";
-import {SearchCalendar} from "../components/OlympicGamesEvent/SearchCalendar";
-import {CalendarEvent} from "../components/OlympicGamesEvent/CalendarEvent"
+import { SearchCalendar } from "../components/OlympicGamesEvent/SearchCalendar";
+import { CalendarEvent } from "../components/OlympicGamesEvent/CalendarEvent";
+import { ContainerFuturEvent } from "../components/FuturEvent/ContainerFuturEvent";
 
 const Content = styled.main`
   background-color: ${color.backgroundPrimary};
@@ -18,6 +19,7 @@ export const JoEpreuve = () => {
     <Content>
       <SearchCalendar />
       <CalendarEvent />
+      <ContainerFuturEvent />
     </Content>
   );
 };
