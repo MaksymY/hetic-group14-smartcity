@@ -53,6 +53,7 @@ const ExplaineAnomalie = styled.p`
 export const StatAnomalie = () => {
   const [results, setResults] = useState([]);
   const [dangerType, setDangerType] = useState();
+  const [numAnomalie, setnumAnomalie] = useState([0, 0, 0]);
 
   useEffect(() => {
     const result = async () => {
@@ -90,29 +91,25 @@ export const StatAnomalie = () => {
           clearedTypes.push({ type });
         });
         setDangerType(clearedTypes);
+        data.map((value) => {
+          if (value.StatusDanger === "Génant") {
+            setnumAnomalie(numAnomalie[0]++);
+          }
+          if (value.StatusDanger === "Très Génant") {
+            setnumAnomalie(numAnomalie[1]++);
+          }
+          if (value.StatusDanger === "Dangereux") {
+            setnumAnomalie(numAnomalie[2]++);
+          }
+        });
+        console.log(numAnomalie && numAnomalie);
+        console.log("itwork");
       } catch (error) {
         console.log(error);
       }
     };
     result();
   }, []);
-
-  function calNum() {
-    results.map((value) => {
-      if (value.StatusDanger === "Génant") {
-        console.log("gello");
-      }
-    });
-  }
-  calNum();
-
-  console.log(dangerType);
-
-  /* const dangerOfAnomalie = () => {
-    let uniqueDanger = [...new Set(results.map(({ StatusDanger: e }) => e))];
-    setDangerType(uniqueDanger);
-    console.log(dangerType);
-   */
 
   const colorAnomalie = (value) => {
     switch (value) {
@@ -138,21 +135,21 @@ export const StatAnomalie = () => {
       </ExplaineAnomalie>
       <h2>Dont ...</h2>
       <GraphAnomalie>
-        {results.map((value, index) => {
-          return (
-            <Anomalie key={index}>
-              <AnomalieStat
-                style={{
-                  backgroundColor: colorAnomalie(value.StatusDanger),
-                  width: `${sizeAnomalie(value.number)}%`,
-                }}
-              ></AnomalieStat>
-              <p style={{ background: colorAnomalie(value.StatusDanger) }}>
-                {value.StatusDanger} {value.status}
-              </p>
-            </Anomalie>
-          );
-        })}
+        <Anomalie>
+          <AnomalieStat
+            style={{
+              backgroundColor: colorAnomalie(dangerType && dangerType[0].type),
+              /* width: `${sizeAnomalie(numAnomalie && numAnomalie[2].dangereux)}%`, */
+            }}
+          ></AnomalieStat>
+          <p
+            style={{
+              background: colorAnomalie(dangerType && dangerType[0].type),
+            }}
+          >
+            {numAnomalie && numAnomalie} {dangerType && dangerType[0].type}
+          </p>
+        </Anomalie>
       </GraphAnomalie>
     </ContentAnomalie>
   );
