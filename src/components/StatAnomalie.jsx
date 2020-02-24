@@ -1,18 +1,15 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { color } from "../style/const";
-import AnomalieData from "../data/AnomalieData";
 import axios from "axios";
 
 const ContentAnomalie = styled.section`
   display: flex;
   flex-direction: column;
   margin: 44px;
-
   h1 {
     color: ${color.bluePrimary};
   }
-
   h2 {
     color: ${color.brandColor};
   }
@@ -26,7 +23,6 @@ const Anomalie = styled.div`
   display: flex;
   margin: 20px 20px 0 0;
   align-items: center;
-
   p {
     background-position: center 50px;
   }
@@ -43,7 +39,6 @@ const ExplaineAnomalie = styled.p`
   margin: 16px 0 32px 0;
   width: 340px;
   color: ${color.brandColor};
-
   span {
     color: ${color.fontInfos};
     font-weight: bold;
@@ -93,13 +88,13 @@ export const StatAnomalie = () => {
         setDangerType(clearedTypes);
         data.map((value) => {
           if (value.StatusDanger === "Génant") {
-            setnumAnomalie(numAnomalie[0]++);
+            setnumAnomalie(++numAnomalie[0]);
           }
           if (value.StatusDanger === "Très Génant") {
-            setnumAnomalie(numAnomalie[1]++);
+            setnumAnomalie(++numAnomalie[1]);
           }
           if (value.StatusDanger === "Dangereux") {
-            setnumAnomalie(numAnomalie[2]++);
+            setnumAnomalie(++numAnomalie[2]);
           }
         });
         console.log(numAnomalie && numAnomalie);
@@ -139,7 +134,7 @@ export const StatAnomalie = () => {
           <AnomalieStat
             style={{
               backgroundColor: colorAnomalie(dangerType && dangerType[0].type),
-              /* width: `${sizeAnomalie(numAnomalie && numAnomalie[2].dangereux)}%`, */
+              width: `${sizeAnomalie(numAnomalie && numAnomalie)}%`,
             }}
           ></AnomalieStat>
           <p

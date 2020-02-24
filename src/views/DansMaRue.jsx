@@ -7,6 +7,8 @@ import { ContainerDansMaRue } from "../components/DansMaRue/ContainerDansMaRue";
 import { LegendsPopulation } from "../components/LegendsPopulation";
 import { SmallCalendar } from "../components/SmallCalendar";
 import { StatAnomalie } from "../components/StatAnomalie";
+import principaleMap from "../assets/principaleMap.svg";
+import { MainMap } from "../components/MainMap";
 
 const ContentHeader = styled.main`
   display: flex;
@@ -17,21 +19,22 @@ const ContentHeader = styled.main`
   font-family: "Seravek";
 `;
 
-const Map = styled.img`
-  height: 75%;
-  margin-top: 50px;
-`;
+const Map = styled.svg``;
 
 const ContentGraph = styled.section`
   font-family: "Seravek";
 `;
 
 export const DansMaRue = () => {
+  const log = () => {
+    console.log(principaleMap);
+  };
+  log();
   return (
     <>
       <ContentHeader>
         <Filter />
-        <Map src={mapParis} />
+        <MainMap />
         <LegendsPopulation />
         <SmallCalendar />
       </ContentHeader>

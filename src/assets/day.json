@@ -1,0 +1,155 @@
+[
+  {
+    "id": "arrondissement_1",
+    "days": [
+      {
+        "id": 26,
+        "challenges": 3
+      },
+      {
+        "id": 27,
+        "challenges": 1
+      },
+      {
+        "id": 28,
+        "challenges": 6
+      }
+    ]
+  },
+  {
+    "id": "arrondissement_2",
+    "days": [
+      {
+        "id": 26,
+        "challenges": 2
+      },
+      {
+        "id": 27,
+        "challenges": 4
+      },
+      {
+        "id": 28,
+        "challenges": 1
+      }
+    ]
+  },
+  {
+    "id": "arrondissement_3",
+    "days": [
+      {
+        "id": 26,
+        "challenges": 2
+      },
+      {
+        "id": 27,
+        "challenges": 4
+      },
+      {
+        "id": 28,
+        "challenges": 1
+      }
+    ]
+  },
+  {
+    "id": "arrondissement_4",
+    "days": [
+      {
+        "id": 26,
+        "challenges": 2
+      },
+      {
+        "id": 27,
+        "challenges": 4
+      },
+      {
+        "id": 28,
+        "challenges": 1
+      }
+    ]
+  },
+  {
+    "id": "arrondissement_5",
+    "days": [
+      {
+        "id": 26,
+        "challenges": 6
+      },
+      {
+        "id": 27,
+        "challenges": 4
+      },
+      {
+        "id": 28,
+        "challenges": 1
+      }
+    ]
+  },
+  {
+    "id": "arrondissement_6",
+    "days": [
+      {
+        "id": 26,
+        "challenges": 4
+      },
+      {
+        "id": 27,
+        "challenges": 4
+      },
+      {
+        "id": 28,
+        "challenges": 1
+      }
+    ]
+  },
+  {
+    "id": "arrondissement_7",
+    "days": [
+      {
+        "id": 26,
+        "challenges": 4
+      },
+      {
+        "id": 27,
+        "challenges": 4
+      },
+      {
+        "id": 28,
+        "challenges": 1
+      }
+    ]
+  },
+  {
+    "id": "arrondissement_8",
+    "days": [
+      {
+        "id": 26,
+        "challenges": 4
+      },
+      {
+        "id": 27,
+        "challenges": 4
+      },
+      {
+        "id": 28,
+        "challenges": 1
+      }
+    ]
+  },
+  {
+    "id": "arrondissement_10",
+    "days": [
+      {
+        "id": 26,
+        "challenges": 1
+      },
+      {
+        "id": 27,
+        "challenges": 4
+      },
+      {
+        "id": 28,
+        "challenges": 1
+      }
+    ]
+  }
+]
