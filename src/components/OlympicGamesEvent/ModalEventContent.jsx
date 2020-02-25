@@ -58,8 +58,6 @@ export const ModalEventContent = ({ currentId }) => {
     fetchData();
   }, []);
 
-  console.log(data);
-
   return (
     <>
       {data

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { color } from "../../style/const";
 import { ModalEventContent } from "./ModalEventContent";
@@ -29,22 +29,18 @@ const Container = styled.div`
 `;
 
 export const ModalEventContainer = ({ currentId, isOpen, setIsOpen }) => {
+  let [isShow, setIsShow] = useState(true);
+  console.log(isOpen);
   return (
     <Container
       style={
         isOpen
-          ? { transform: "translate(400px, 0)", opacity: "0" }
-          : { transform: "translate(0, 0)" }
+          ? { transform: "translate(0, 0)" }
+          : { transform: "translate(400px, 0)", opacity: "0" }
       }
     >
       <ModalEventContent currentId={currentId} />
-      <img
-        src={Cross}
-        onClick={() => {
-          setIsOpen(true);
-        }}
-        alt="cross"
-      />
+      <img src={Cross} onClick={() => setIsOpen(!isOpen)} alt="cross" />
     </Container>
   );
 };

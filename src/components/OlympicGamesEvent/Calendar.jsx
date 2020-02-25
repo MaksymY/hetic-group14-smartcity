@@ -63,7 +63,7 @@ export const Calendar = ({ isOpen, setCurrentId, getId, setIsOpen }) => {
           <div
             onClick={() => {
               setCurrentId((getId = value.id));
-              setIsOpen(false);
+              setIsOpen(true);
             }}
             key={index}
             className={value.display ? "hidden" : ""}
