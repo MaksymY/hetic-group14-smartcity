@@ -6,11 +6,9 @@ export const color = {
   darkAccent: "#678286",
   fontInfos: "#434D6D",
   whiteColor: "#FCFDFF",
-  Success:"#61A869",
+  Success: "#61A869",
   Warning: "#FFBC7E",
-  Danger: "#FF8080"
-
-
+  Danger: "#FF8080",
 };
 
 export const fontSize = {
@@ -19,5 +17,5 @@ export const fontSize = {
   H2: "16px",
   RegularFont: "16px",
   SmallFont: "11px",
-  detailsFont: "11px"
-}
+  detailsFont: "11px",
+};

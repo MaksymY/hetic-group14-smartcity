@@ -1,0 +1,15 @@
+[
+    {
+		"id": 26,
+		"areas": [
+			{
+			"id": "arrondissement_1",
+			"challenges": 1
+			},
+			{
+			"id": "arrondissement_2",
+			"challenges": 2
+			}
+		]
+    }
+]
