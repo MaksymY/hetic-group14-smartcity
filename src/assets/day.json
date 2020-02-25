@@ -85,7 +85,7 @@
     ]
   },
   {
-    "id": "arrondissement_2",
+    "id": "arrondissement_6",
     "days": [
       {
         "id": 26,
@@ -102,7 +102,7 @@
     ]
   },
   {
-    "id": "arrondissement_2",
+    "id": "arrondissement_7",
     "days": [
       {
         "id": 26,
@@ -136,7 +136,194 @@
     ]
   },
   {
+    "id": "arrondissement_9",
+    "days": [
+      {
+        "id": 26,
+        "challenges": 1
+      },
+      {
+        "id": 27,
+        "challenges": 4
+      },
+      {
+        "id": 28,
+        "challenges": 1
+      }
+    ]
+  },
+  {
     "id": "arrondissement_10",
+    "days": [
+      {
+        "id": 26,
+        "challenges": 1
+      },
+      {
+        "id": 27,
+        "challenges": 4
+      },
+      {
+        "id": 28,
+        "challenges": 1
+      }
+    ]
+  },
+  {
+    "id": "arrondissement_11",
+    "days": [
+      {
+        "id": 26,
+        "challenges": 1
+      },
+      {
+        "id": 27,
+        "challenges": 4
+      },
+      {
+        "id": 28,
+        "challenges": 1
+      }
+    ]
+  },
+  {
+    "id": "arrondissement_12",
+    "days": [
+      {
+        "id": 26,
+        "challenges": 1
+      },
+      {
+        "id": 27,
+        "challenges": 4
+      },
+      {
+        "id": 28,
+        "challenges": 1
+      }
+    ]
+  },
+  {
+    "id": "arrondissement_13",
+    "days": [
+      {
+        "id": 26,
+        "challenges": 1
+      },
+      {
+        "id": 27,
+        "challenges": 4
+      },
+      {
+        "id": 28,
+        "challenges": 1
+      }
+    ]
+  },
+  {
+    "id": "arrondissement_14",
+    "days": [
+      {
+        "id": 26,
+        "challenges": 1
+      },
+      {
+        "id": 27,
+        "challenges": 4
+      },
+      {
+        "id": 28,
+        "challenges": 1
+      }
+    ]
+  },
+  {
+    "id": "arrondissement_15",
+    "days": [
+      {
+        "id": 26,
+        "challenges": 1
+      },
+      {
+        "id": 27,
+        "challenges": 4
+      },
+      {
+        "id": 28,
+        "challenges": 1
+      }
+    ]
+  },
+  {
+    "id": "arrondissement_16",
+    "days": [
+      {
+        "id": 26,
+        "challenges": 1
+      },
+      {
+        "id": 27,
+        "challenges": 4
+      },
+      {
+        "id": 28,
+        "challenges": 1
+      }
+    ]
+  },
+  {
+    "id": "arrondissement_17",
+    "days": [
+      {
+        "id": 26,
+        "challenges": 1
+      },
+      {
+        "id": 27,
+        "challenges": 4
+      },
+      {
+        "id": 28,
+        "challenges": 1
+      }
+    ]
+  },
+  {
+    "id": "arrondissement_18",
+    "days": [
+      {
+        "id": 26,
+        "challenges": 1
+      },
+      {
+        "id": 27,
+        "challenges": 4
+      },
+      {
+        "id": 28,
+        "challenges": 1
+      }
+    ]
+  },
+  {
+    "id": "arrondissement_19",
+    "days": [
+      {
+        "id": 26,
+        "challenges": 1
+      },
+      {
+        "id": 27,
+        "challenges": 4
+      },
+      {
+        "id": 28,
+        "challenges": 1
+      }
+    ]
+  },
+  {
+    "id": "arrondissement_20",
     "days": [
       {
         "id": 26,
