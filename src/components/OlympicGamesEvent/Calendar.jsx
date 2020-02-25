@@ -55,15 +55,15 @@ const borderColor = value => {
   }
 };
 
-export const Calendar = ({ isOpen, setCurrentId, setIsOpen }) => {
+export const Calendar = ({ isOpen, setCurrentId, getId, setIsOpen }) => {
   return (
     <Content>
       {CalendarData.map((value, index) => {
         return (
           <div
             onClick={() => {
-              setCurrentId(value.id);
-              setIsOpen(false);
+              setCurrentId((getId = value.id));
+              setIsOpen(true);
             }}
             key={index}
             className={value.display ? "hidden" : ""}

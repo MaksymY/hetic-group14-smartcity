@@ -46,7 +46,7 @@ export const DansMaRueCard = () => {
     const result = async () => {
       try {
         const { data } = await axios.get(
-          "http://51.254.123.67/efficient-api/api/defects",
+          process.env.REACT_APP_API_URL_DANS_MA_RUE,
           {
             headers: {
               accept: "application/json"
@@ -58,8 +58,12 @@ export const DansMaRueCard = () => {
         console.log(error);
       }
     };
+
     result();
   }, []);
+
+  console.log(results);
+
   return (
     <>
       {results

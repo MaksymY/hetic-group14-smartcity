@@ -10,7 +10,7 @@ const Content = styled.section`
   width: 308px;
   height: 156px;
   left: 0;
-  top: 35%;
+  top: 50%;
   color: ${color.bluePrimary};
   margin: 0 34px;
 
