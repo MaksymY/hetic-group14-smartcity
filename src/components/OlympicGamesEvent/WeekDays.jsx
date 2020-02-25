@@ -11,6 +11,7 @@ const Content = styled.div`
     width: 100%;
     align-items: center;
     justify-items: center;
+    font-weight: normal;
     grid-template-columns: repeat(7, 1fr);
     overflow: auto;
     color: ${color.backgroundPrimary};

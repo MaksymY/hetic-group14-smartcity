@@ -1,32 +1,41 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { color, fontSize } from "../../style/const";
-import { ModalData } from "../../data/ModalData";
+import axios from "axios";
+import moment from "moment";
 
 const Container = styled.div`
-  padding: 32px 124px 50px 48px;
   font-family: "Seravek";
+  margin-bottom: 30px;
 
   h2 {
     color: ${color.bluePrimary};
-    font-size: 32px;
     font-weight: normal;
-    margin-bottom: 50px;
+    font-size: 32px;
+    margin-bottom: 45px;
+    padding: 40px 0 0 40px;
+    text-transform: capitalize;
+  }
+  &:nth-child(n + 2) {
+    h2 {
+      display: none;
+    }
   }
 `;
 
-const DescriptionContainer = styled.div`
-  margin-bottom: 30px;
+const ContentContainer = styled.div`
+  width: 50%;
+  margin-left: 40px;
 
   div {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 10px;
+  }
 
-    h4 {
-      color: ${color.fontInfos};
-      font-size: ${fontSize.H2};
-    }
+  h3 {
+    color: ${color.fontInfos};
+    font-size: ${fontSize.H2};
+    margin-bottom: 10px;
   }
 
   p {
@@ -35,30 +44,39 @@ const DescriptionContainer = styled.div`
     line-height: 15px;
     padding-left: 10px;
   }
-
-  p:nth-child(3) {
-    margin-bottom: 20px;
-  }
 `;
 
 export const ModalEventContent = ({ currentId }) => {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await axios(process.env.REACT_APP_API_URL_OLYMPIC);
+
+      setData(result.data);
+    };
+    fetchData();
+  }, []);
+
+  console.log(data);
+
   return (
     <>
-      {ModalData.filter(value => value.id === currentId).map((value, index) => (
-        <Container key={index}>
-          <h2>{value.date}</h2>
-          {value.modalContent.map((value, index) => (
-            <DescriptionContainer key={index}>
+      {data
+        .filter((value, index) => value.dateId === currentId)
+        .map((value, index) => (
+          <Container key={index}>
+            <h2>{moment(value.date).format("dddd Do MMMM")}</h2>
+            <ContentContainer>
               <div>
-                <h4>{value.eventTitle}</h4>
-                <p>{value.district}</p>
+                <h3>{value.sport.name}</h3>
+                <p>{value.sport.place.city}</p>
               </div>
-              <p>- {value.eventLocation}</p>
-              <p>- Capacité : {value.capacity}</p>
-            </DescriptionContainer>
-          ))}
-        </Container>
-      ))}
+              <p>- {value.sport.place.name}</p>
+              <p>- Capacité : {value.sport.place.capacity} personnes</p>
+            </ContentContainer>
+          </Container>
+        ))}
     </>
   );
 };

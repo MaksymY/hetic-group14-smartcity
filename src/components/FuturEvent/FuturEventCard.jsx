@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { color } from "../../style/const";
-import {FuturEventData} from '../../data/FuturEventData'
+import { FuturEventData } from "../../data/FuturEventData";
+import axios from "axios";
+import moment from "moment";
 
 const Container = styled.div`
   width: 100%;
@@ -36,29 +38,49 @@ const Container = styled.div`
     display: flex;
     justify-content: space-between;
     width: 100%;
+
+    span {
+      text-transform: capitalize;
+      font-size: 11px;
+      color: ${color.brandColor};
+      margin-bottom: 5px;
+    }
   }
 `;
 
 export const FuturEventCard = () => {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await axios(process.env.REACT_APP_API_URL_OLYMPIC);
+
+      setData(result.data);
+    };
+    fetchData();
+  }, []);
+
   return (
     <>
-      {FuturEventData.map((value, index) => {
-        return (
-          <Container key={index}>
-            <h3>{value.title}</h3>
-            <p>{value.adress}</p>
-            <p>{value.zipcode}</p>
-            <div>
-              <p>{value.futurEvent}</p>
-              <p>{value.hour}</p>
-            </div>
-            <div>
-              <p>{value.categorie}</p>
-              <p>{value.date}</p>
-            </div>
-          </Container>
-        );
-      })}
+      {data
+        .filter((data, index) => index < 10)
+        .map((value, index) => {
+          return (
+            <Container key={index}>
+              <h3>{value.sport.name}</h3>
+              <p>{value.sport.place.address}</p>
+              <p>{value.sport.place.city}</p>
+              <div>
+                <p>Prochaine épreuve :</p>
+                <p>{moment(value.startTime).format("LT")}</p>
+              </div>
+              <div>
+                <p>{value.name}</p>
+                <span>{moment(value.date).format("dddd Do MMMM")}</span>
+              </div>
+            </Container>
+          );
+        })}
     </>
   );
 };

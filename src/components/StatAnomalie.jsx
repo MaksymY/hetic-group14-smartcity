@@ -54,7 +54,7 @@ export const StatAnomalie = () => {
     return AnomalieData.reduce((acc, val) => acc + val.number, 0);
   };
 
-  const colorAnomalie = (value) => {
+  const colorAnomalie = value => {
     switch (value) {
       case "Génant":
         return "#FFE664";
@@ -65,7 +65,7 @@ export const StatAnomalie = () => {
     }
   };
 
-  const sizeAnomalie = (value) => {
+  const sizeAnomalie = value => {
     return (value * 100) / totalAnomalie();
   };
 
@@ -84,7 +84,7 @@ export const StatAnomalie = () => {
               <AnomalieStat
                 style={{
                   backgroundColor: colorAnomalie(value.status),
-                  width: `${sizeAnomalie(value.number)}%`,
+                  width: `${sizeAnomalie(value.number)}%`
                 }}
               ></AnomalieStat>
               <p style={{ background: colorAnomalie(value.status) }}>
