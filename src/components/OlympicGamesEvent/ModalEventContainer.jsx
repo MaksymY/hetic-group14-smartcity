@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import { color } from "../../style/const";
 import { ModalEventContent } from "./ModalEventContent";
@@ -14,7 +14,7 @@ const Container = styled.div`
   background-color: ${color.backgroundPrimary};
   outline: 3px solid #fff;
   opacity: 0.9;
-  transition: 0.4s;
+  transition: 0.2s;
   overflow-y: auto;
 
   img {
@@ -29,7 +29,6 @@ const Container = styled.div`
 `;
 
 export const ModalEventContainer = ({ currentId, isOpen, setIsOpen }) => {
-  let [isShow, setIsShow] = useState(true);
   console.log(isOpen);
   return (
     <Container

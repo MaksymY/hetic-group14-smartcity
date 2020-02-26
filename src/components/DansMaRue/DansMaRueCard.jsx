@@ -69,10 +69,10 @@ export const DansMaRueCard = () => {
         .map((value, index) => (
           <Container key={index}>
             <h3>{value.SubType}</h3>
-            <p>{value.adress}</p>
+            <p>{value.address}</p>
             <p>{value.zipcode}</p>
             <span>Catégorie:</span>
-            <p>{value.categorie}</p>
+            <p>{value.Type}</p>
           </Container>
         ))}
     </>

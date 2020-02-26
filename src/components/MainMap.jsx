@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import { color } from "../style/const";
 import "../style/svgMap.css";
 import districts from "../assets/day.json";
 
@@ -31,15 +30,20 @@ export const MainMap = ({ getId }) => {
   useEffect(() => {
     const paths = Array.from(document.querySelectorAll("#mainMap path"));
     districts.forEach(({ id, days }) => {
+<<<<<<< HEAD
       const el = paths.find((path) => path.id === id); // récupère l'élément SVG
       const day = days.find((d) => d.id === getId); //récupère le jour
+=======
+      const el = paths.find(path => path.id === id); // récupère l'élément SVG
+      const day = days.find(d => d.id === dayID); //récupère le jour
+>>>>>>> link data with cards content
       el.setAttribute("class", `cha_${day.challenges}`); // ajoute la classe
     });
   }, [getId]);
   //il faut trouver un moyen de l'executer qu'une seule fois au mounted
   useEffect(() => {
     const paths = Array.from(document.querySelectorAll("#mainMap path"));
-    paths.forEach((el) => {
+    paths.forEach(el => {
       el.addEventListener("click", () => {
         console.log(el.id);
       });
