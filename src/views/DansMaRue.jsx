@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { color } from "../style/const";
 import mapParis from "../assets/map.svg";
@@ -26,6 +26,10 @@ const ContentGraph = styled.section`
 `;
 
 export const DansMaRue = () => {
+  let [getId, setGetId] = useState(26);
+
+  console.log(getId);
+
   const log = () => {
     console.log(principaleMap);
   };
@@ -34,9 +38,9 @@ export const DansMaRue = () => {
     <>
       <ContentHeader>
         <Filter />
-        <MainMap />
+        <MainMap getId={getId} />
         <LegendsPopulation />
-        <SmallCalendar />
+        <SmallCalendar setGetId={setGetId} />
       </ContentHeader>
       <ContentGraph>
         <ContainerDansMaRue />

@@ -49,9 +49,9 @@ export const DansMaRueCard = () => {
           process.env.REACT_APP_API_URL_DANS_MA_RUE,
           {
             headers: {
-              accept: "application/json"
-            }
-          }
+              accept: "application/json",
+            },
+          },
         );
         setResults(data);
       } catch (error) {
@@ -61,8 +61,6 @@ export const DansMaRueCard = () => {
 
     result();
   }, []);
-
-  console.log(results);
 
   return (
     <>

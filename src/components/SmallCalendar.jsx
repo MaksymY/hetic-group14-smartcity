@@ -30,12 +30,12 @@ const IconShow = styled.svg`
   transition: 0.3s;
 `;
 
-export const SmallCalendar = () => {
+export const SmallCalendar = ({ setGetId }) => {
   let [isOpenCalendar, setIsOpenCalendar] = useState(false);
 
   return (
     <ContentSmallCalendar>
-      <h1>Aujourd’hui, Dimanche 28 Juillet</h1>
+      <h1>Aujourd’hui, Dimanche 26 Juillet</h1>
       <ShowContentCalendar>
         <IconShow
           onClick={() => setIsOpenCalendar((isOpenCalendar = !isOpenCalendar))}
@@ -47,7 +47,10 @@ export const SmallCalendar = () => {
         >
           <use xlinkHref={`${icons}#arrowToggle`} />
         </IconShow>
-        <DansMaRueCalendar isOpenCalendar={isOpenCalendar} />
+        <DansMaRueCalendar
+          setGetId={setGetId}
+          isOpenCalendar={isOpenCalendar}
+        />
       </ShowContentCalendar>
     </ContentSmallCalendar>
   );

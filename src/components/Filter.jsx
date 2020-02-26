@@ -75,21 +75,21 @@ export const Filter = () => {
         <FilterCheck
           style={
             isOpen
-              ? { transform: "translate(0, 0)", opacity: "1" }
+              ? { transform: "translate(15px, 0)", opacity: "1" }
               : { transform: "translate(-40px, 0)", opacity: "0" }
           }
         >
           <label>
             <Checkbox
               type="checkbox"
-              onChange={e => setCheckState(e.target.checked)}
+              onChange={(e) => setCheckState(e.target.checked)}
             />
             <p>Densité de pop</p>
           </label>
           <label>
             <Checkbox
               type="checkbox"
-              onChange={e => setCheckState(e.target.checked)}
+              onChange={(e) => setCheckState(e.target.checked)}
             />
             <p>Épreuves de JO</p>
           </label>

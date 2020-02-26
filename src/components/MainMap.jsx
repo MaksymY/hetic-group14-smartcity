@@ -12,7 +12,7 @@ const SVGMap = styled.div`
   width: 100vw;
 `;
 
-export const MainMap = () => {
+export const MainMap = ({ getId }) => {
   /*
   let [json, setJson] = useState([]);
 
@@ -28,16 +28,14 @@ export const MainMap = () => {
   };
   logData();
 
-  let [dayID, setDayID] = useState(26);
-
   useEffect(() => {
     const paths = Array.from(document.querySelectorAll("#mainMap path"));
     districts.forEach(({ id, days }) => {
       const el = paths.find((path) => path.id === id); // récupère l'élément SVG
-      const day = days.find((d) => d.id === dayID); //récupère le jour
+      const day = days.find((d) => d.id === getId); //récupère le jour
       el.setAttribute("class", `cha_${day.challenges}`); // ajoute la classe
     });
-  }, [dayID]);
+  }, [getId]);
   //il faut trouver un moyen de l'executer qu'une seule fois au mounted
   useEffect(() => {
     const paths = Array.from(document.querySelectorAll("#mainMap path"));

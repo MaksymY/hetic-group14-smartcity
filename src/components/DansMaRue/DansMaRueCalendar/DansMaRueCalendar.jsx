@@ -65,11 +65,10 @@ const CalendarContainer = styled.div`
   }
 `;
 
-export const DansMaRueCalendar = isOpenCalendar => {
+export const DansMaRueCalendar = ({ isOpenCalendar, setGetId }) => {
   let [clickedId, setClickedId] = useState(0);
-  let [getId, setGetId] = useState(0);
 
-  const clickedAction = index => {
+  const clickedAction = (index) => {
     setClickedId(index);
   };
 
@@ -77,7 +76,7 @@ export const DansMaRueCalendar = isOpenCalendar => {
     <Container
       onClick={() => console.log(isOpenCalendar)}
       style={
-        isOpenCalendar.isOpenCalendar
+        isOpenCalendar
           ? { transform: "translate(40px, 0)", opacity: "1" }
           : { transform: "translate(20px, 0)", opacity: "0" }
       }
