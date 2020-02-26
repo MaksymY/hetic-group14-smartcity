@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { color } from "../style/const";
-import mapParis from "../assets/map.svg";
 import { Filter } from "../components/Filter";
 import { ContainerDansMaRue } from "../components/DansMaRue/ContainerDansMaRue";
 import { LegendsPopulation } from "../components/LegendsPopulation";
@@ -9,6 +8,9 @@ import { SmallCalendar } from "../components/SmallCalendar";
 import { StatAnomalie } from "../components/StatAnomalie";
 import principaleMap from "../assets/principaleMap.svg";
 import { MainMap } from "../components/MainMap";
+import { GraphContainer } from "../components/DansMaRue/GraphDansMaRue/GraphContainer";
+import { FirstBoxContainer } from "../components/DansMaRue/GraphDansMaRue/FirstBoxContainer";
+import { SecondBoxContainer } from "../components/DansMaRue/GraphDansMaRue/SecondBoxContainer";
 
 const ContentHeader = styled.main`
   display: flex;
@@ -18,8 +20,6 @@ const ContentHeader = styled.main`
   height: calc(100vh - 60px);
   font-family: "Seravek";
 `;
-
-const Map = styled.svg``;
 
 const ContentGraph = styled.section`
   font-family: "Seravek";
@@ -43,8 +43,11 @@ export const DansMaRue = () => {
         <SmallCalendar setGetId={setGetId} />
       </ContentHeader>
       <ContentGraph>
-        <ContainerDansMaRue />
         <StatAnomalie />
+        <ContainerDansMaRue />
+        <FirstBoxContainer />
+        <GraphContainer />
+        <SecondBoxContainer />
       </ContentGraph>
     </>
   );

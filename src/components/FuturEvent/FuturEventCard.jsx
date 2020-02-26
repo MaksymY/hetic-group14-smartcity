@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { color } from "../../style/const";
-import { FuturEventData } from "../../data/FuturEventData";
 import axios from "axios";
 import moment from "moment";
 
