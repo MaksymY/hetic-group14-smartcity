@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { color } from "../style/const";
-import { SearchCalendar } from "../components/OlympicGamesEvent/SearchCalendar";
 import { CalendarEvent } from "../components/OlympicGamesEvent/CalendarEvent";
 import { ContainerFuturEvent } from "../components/FuturEvent/ContainerFuturEvent";
 import { Filter } from "../components/Filter";
@@ -46,7 +45,6 @@ export const JoEpreuve = () => {
         <ModalMap getId={getId} getDistrict={getDistrict} />
       </ContentHeader>
       <Content>
-        <SearchCalendar />
         <CalendarEvent />
         <ContainerFuturEvent />
       </Content>
