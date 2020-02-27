@@ -18,7 +18,6 @@ const ContentHeader = styled.main`
   justify-content: center;
   background-color: ${color.backgroundPrimary};
   width: 100vw;
-  height: calc(100vh - 60px);
   font-family: "Seravek";
 `;
 
@@ -29,15 +28,21 @@ const ContentGraph = styled.section`
 export const DansMaRue = () => {
   let [getId, setGetId] = useState(28);
   let [getDistrict, setGetDistrict] = useState();
+  let [isChecked, setIsChecked] = useState(false);
 
   // console.log(getId);
   console.log(getDistrict);
+  console.log(isChecked);
 
   return (
     <>
       <ContentHeader>
-        <Filter />
-        <MainMap getId={getId} setGetDistrict={setGetDistrict} />
+        <Filter setIsChecked={setIsChecked} isChecked={isChecked} />
+        <MainMap
+          getId={getId}
+          setGetDistrict={setGetDistrict}
+          isChecked={isChecked}
+        />
         <LegendsPopulation />
         <SmallCalendar setGetId={setGetId} />
         <ModalMap getId={getId} getDistrict={getDistrict} />
