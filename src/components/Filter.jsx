@@ -13,6 +13,7 @@ const Content = styled.section`
   top: 50%;
   color: ${color.bluePrimary};
   margin: 0 34px;
+  z-index: 2;
 
   h1 {
     margin: 10px 0;
@@ -65,9 +66,10 @@ const IconStyle = styled.svg`
   transition: 0.2s;
 `;
 
-export const Filter = () => {
+export const Filter = ({ setIsChecked, isChecked }) => {
   let [checkState, setCheckState] = useState(true);
   let [isOpen, setIsOpen] = useState(false);
+
   return (
     <Content>
       <h1>Appliquer des filtres</h1>
@@ -80,16 +82,15 @@ export const Filter = () => {
           }
         >
           <label>
-            <Checkbox
-              type="checkbox"
-              onChange={(e) => setCheckState(e.target.checked)}
-            />
+            <Checkbox type="checkbox" />
             <p>Densité de pop</p>
           </label>
           <label>
             <Checkbox
               type="checkbox"
-              onChange={(e) => setCheckState(e.target.checked)}
+              onChange={() => {
+                setIsChecked(!isChecked);
+              }}
             />
             <p>Épreuves de JO</p>
           </label>
