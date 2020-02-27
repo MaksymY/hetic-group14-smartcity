@@ -30,7 +30,7 @@ export const DansMaRue = () => {
   let [getId, setGetId] = useState(28);
   let [getDistrict, setGetDistrict] = useState();
 
-  console.log(getId);
+  // console.log(getId);
   console.log(getDistrict);
 
   return (

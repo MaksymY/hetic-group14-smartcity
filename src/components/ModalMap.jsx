@@ -61,9 +61,9 @@ export const ModalMap = ({ getId, getDistrict }) => {
       <svg onClick={() => setIsOpenModal(false)}>
         <use xlinkHref={`${icons}#cross`} />
       </svg>
-      <h1>19eme arrondissement</h1>
+      <h1>{getDistrict}eme arrondissement</h1>
       <DataContainer>
-        <LastEntries />
+        <LastEntries getId={getId} getDistrict={getDistrict} />
         <EventPlace getId={getId} getDistrict={getDistrict} />
       </DataContainer>
     </ModalContent>

@@ -47,12 +47,12 @@ export const EventPlace = ({ getId, getDistrict }) => {
     (value) => value.sport.place.district === getDistrict,
   );
   const goodDistrict = getId < 11 ? 8 : 7;
-  console.log(goodDistrict);
+  // console.log(goodDistrict);
   const finalResult = test.filter(
     (value) => value.date === `2024-07-${getId}T00:00:00+02:00`,
   );
-  console.log(getId);
-  console.log(test);
+  // console.log(getId);
+  // console.log(test);
 
   console.log(finalResult);
   console.log(data);

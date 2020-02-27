@@ -5,8 +5,6 @@ import { color, fontSize } from "../../../style/const";
 
 const days = ["L", "Ma", "Me", "J", "V", "S", "D"];
 
-console.log(days);
-
 const Container = styled.div`
   height: 100%;
   width: 285px;

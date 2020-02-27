@@ -26,11 +26,11 @@ const Title = styled.p`
   width: 200px;
 `;
 
-export const LastEntries = () => {
+export const LastEntries = ({ getId, getDistrict }) => {
   const [results, setResults] = useState([]);
 
   useEffect(() => {
-    let url = `${process.env.REACT_APP_API_URL_LAST_ENTRIES}/19`;
+    let url = `${process.env.REACT_APP_API_URL_LAST_ENTRIES}/${getDistrict}`;
     const result = async () => {
       try {
         const { data } = await axios.get(url, {
@@ -45,13 +45,13 @@ export const LastEntries = () => {
     };
 
     result();
-  }, []);
-
-  console.log(results);
+  }, [getDistrict]);
 
   return (
     <Content>
-      <Title>Dernières anomalies signalées dans l'arrondissement 19e</Title>
+      <Title>
+        Dernières anomalies signalées dans l'arrondissement {getDistrict}e
+      </Title>
       <div>
         {results.map((value, index) => (
           <p key={index}> - {value.Type}</p>

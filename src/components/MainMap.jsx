@@ -30,46 +30,40 @@ export const MainMap = ({ setGetDistrict, getId }) => {
 
     result();
   }, []);
+  useEffect(() => {
+    const test = () => {
+      const paths = Array.from(document.querySelectorAll("#mainMap path"));
+      // console.log(results && results);
 
-  const logData = () => {
-    console.log(results && results);
-  };
-  logData();
-
-  /* useEffect(() => {
-    console.log("heeeeeeeeeeeeeee");
-    const paths = Array.from(document.querySelectorAll("#mainMap path"));
-    paths.className = "default";
-  }, [getId]); */
-
-  const test = () => {
-    const paths = Array.from(document.querySelectorAll("#mainMap path"));
-    console.log(results && results);
-
-    results &&
-      results.forEach(({ district, days }) => {
-        const el = paths.find((path) => path.id === district); // récupère l'élément SVG
-        days.map((value) => {
-          if (value.date_id == getId) {
-            console.log(value);
-            el.classList.add(`cha_${value.events}`);
-          }
+      results &&
+        results.forEach(({ district, days }) => {
+          const el = paths.find((path) => path.id === district); // récupère l'élément SVG
+          /* const day = days.find((d) => d.date_id == getId); */
+          const day = days.find((d) => d.date_id == getId);
+          console.log(day);
+          el.setAttribute("class", `cha_${day.events}`);
+          /* days.map((value) => {
+            if (value.date_id == getId) {
+              // console.log(value);
+              el.classList.add(`cha_${value.events}`);
+            }
+          }); */
+          //récupère le jour
+          /*  el.setAttribute("class", `cha_${day.events}`); */ // ajoute la classe
         });
-        //récupère le jour
-        /*  el.setAttribute("class", `cha_${day.events}`); */ // ajoute la classe
-      });
-  };
-  test();
+    };
+    test();
+  }, [getId]);
 
   //il faut trouver un moyen de l'executer qu'une seule fois au mounted
-  useEffect(() => {
-    const paths = Array.from(document.querySelectorAll("#mainMap path"));
-    paths.forEach((el) => {
-      el.addEventListener("click", () => {
-        setGetDistrict(+el.id.replace("d", ""));
-      });
+
+  const paths = Array.from(document.querySelectorAll("#mainMap path"));
+  paths.forEach((el) => {
+    el.addEventListener("click", () => {
+      setGetDistrict(+el.id.replace("d", ""));
     });
   });
+
   return (
     <SVGMap>
       <svg
