@@ -9,6 +9,7 @@ import { SmallCalendar } from "../components/SmallCalendar";
 import { StatAnomalie } from "../components/StatAnomalie";
 import principaleMap from "../assets/principaleMap.svg";
 import { MainMap } from "../components/MainMap";
+import { ModalMap } from "../components/ModalMap";
 
 const ContentHeader = styled.main`
   display: flex;
@@ -26,21 +27,20 @@ const ContentGraph = styled.section`
 `;
 
 export const DansMaRue = () => {
-  let [getId, setGetId] = useState(26);
+  let [getId, setGetId] = useState(28);
+  let [getDistrict, setGetDistrict] = useState();
 
   console.log(getId);
+  console.log(getDistrict);
 
-  const log = () => {
-    console.log(principaleMap);
-  };
-  log();
   return (
     <>
       <ContentHeader>
         <Filter />
-        <MainMap getId={getId} />
+        <MainMap getId={getId} setGetDistrict={setGetDistrict} />
         <LegendsPopulation />
         <SmallCalendar setGetId={setGetId} />
+        <ModalMap getId={getId} getDistrict={getDistrict} />
       </ContentHeader>
       <ContentGraph>
         <ContainerDansMaRue />

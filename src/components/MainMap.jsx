@@ -3,7 +3,6 @@ import axios from "axios";
 import styled from "styled-components";
 import { color } from "../style/const";
 import "../style/svgMap.css";
-/* import districts from "../assets/day.json"; */
 
 const SVGMap = styled.div`
   display: flex;
@@ -13,7 +12,7 @@ const SVGMap = styled.div`
   width: 100vw;
 `;
 
-export const MainMap = ({ getId }) => {
+export const MainMap = ({ setGetDistrict, getId }) => {
   const [results, setResults] = useState([]);
 
   useEffect(() => {
@@ -38,6 +37,12 @@ export const MainMap = ({ getId }) => {
   };
   logData();
 
+  /* useEffect(() => {
+    console.log("heeeeeeeeeeeeeee");
+    const paths = Array.from(document.querySelectorAll("#mainMap path"));
+    paths.className = "default";
+  }, [getId]); */
+
   const test = () => {
     const paths = Array.from(document.querySelectorAll("#mainMap path"));
     console.log(results && results);
@@ -45,10 +50,10 @@ export const MainMap = ({ getId }) => {
     results &&
       results.forEach(({ district, days }) => {
         const el = paths.find((path) => path.id === district); // récupère l'élément SVG
-        const day = days.map((value) => {
+        days.map((value) => {
           if (value.date_id == getId) {
             console.log(value);
-            el.setAttribute("class", `cha_${value.events}`);
+            el.classList.add(`cha_${value.events}`);
           }
         });
         //récupère le jour
@@ -62,7 +67,7 @@ export const MainMap = ({ getId }) => {
     const paths = Array.from(document.querySelectorAll("#mainMap path"));
     paths.forEach((el) => {
       el.addEventListener("click", () => {
-        console.log(el.id);
+        setGetDistrict(+el.id.replace("d", ""));
       });
     });
   });
