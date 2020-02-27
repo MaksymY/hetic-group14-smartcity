@@ -6,12 +6,8 @@ import { ContainerDansMaRue } from "../components/DansMaRue/ContainerDansMaRue";
 import { LegendsPopulation } from "../components/LegendsPopulation";
 import { SmallCalendar } from "../components/SmallCalendar";
 import { StatAnomalie } from "../components/StatAnomalie";
-import principaleMap from "../assets/principaleMap.svg";
 import { MainMap } from "../components/MainMap";
 import { ModalMap } from "../components/ModalMap";
-import { GraphContainer } from "../components/DansMaRue/GraphDansMaRue/GraphContainer";
-import { FirstBoxContainer } from "../components/DansMaRue/GraphDansMaRue/FirstBoxContainer";
-import { SecondBoxContainer } from "../components/DansMaRue/GraphDansMaRue/SecondBoxContainer";
 
 const ContentHeader = styled.main`
   display: flex;
@@ -50,9 +46,6 @@ export const DansMaRue = () => {
       <ContentGraph>
         <StatAnomalie />
         <ContainerDansMaRue />
-        <FirstBoxContainer />
-        <GraphContainer />
-        <SecondBoxContainer />
       </ContentGraph>
     </>
   );

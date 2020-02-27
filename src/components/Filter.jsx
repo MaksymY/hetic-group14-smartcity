@@ -68,6 +68,7 @@ const IconStyle = styled.svg`
 
 export const Filter = ({ setIsChecked, isChecked }) => {
   let [checkState, setCheckState] = useState(true);
+  let [checkPop, setCheckPop] = useState(true);
   let [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -82,7 +83,13 @@ export const Filter = ({ setIsChecked, isChecked }) => {
           }
         >
           <label>
-            <Checkbox type="checkbox" />
+            <Checkbox
+              type="checkbox"
+              defaultChecked={checkPop}
+              onChange={() => {
+                setCheckPop(!checkPop);
+              }}
+            />
             <p>Densité de pop</p>
           </label>
           <label>
