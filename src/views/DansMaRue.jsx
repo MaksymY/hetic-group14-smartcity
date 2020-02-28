@@ -26,10 +26,6 @@ export const DansMaRue = () => {
   let [getDistrict, setGetDistrict] = useState();
   let [isChecked, setIsChecked] = useState(false);
 
-  // console.log(getId);
-  console.log(getDistrict);
-  console.log(isChecked);
-
   return (
     <>
       <ContentHeader>

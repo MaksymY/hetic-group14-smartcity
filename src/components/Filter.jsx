@@ -67,7 +67,6 @@ const IconStyle = styled.svg`
 `;
 
 export const Filter = ({ setIsChecked, isChecked }) => {
-  let [checkState, setCheckState] = useState(true);
   let [checkPop, setCheckPop] = useState(true);
   let [isOpen, setIsOpen] = useState(false);
 
