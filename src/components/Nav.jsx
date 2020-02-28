@@ -9,7 +9,7 @@ const NavStyled = styled.nav`
   align-items: center;
   height: 60px;
   background-color: ${color.bluePrimary};
-  font-family: 'Seravek';
+  font-family: "Seravek";
 
   ul {
     display: inherit;
@@ -23,7 +23,7 @@ const NavStyled = styled.nav`
   }
 `;
 const NavLogo = styled.img`
-  margin: 0 140px 0 30px;
+  margin: 0 139px 0 30px;
 `;
 
 export const Nav = () => {
@@ -46,7 +46,7 @@ export const Nav = () => {
             style={!active ? { fontWeight: "bold" } : {}}
           >
             Épreuves des JO
-              </li>
+          </li>
         </Link>
       </ul>
     </NavStyled>
