@@ -56,14 +56,14 @@ export const StatAnomalie = () => {
     const result = async () => {
       try {
         const { data } = await axios.get(
-          "http://51.254.123.67/efficient-api/api/defects",
+          process.env.REACT_APP_API_URL_DANS_MA_RUE,
           {
             headers: {
-              accept: "application/json",
-            },
-          },
+              accept: "application/json"
+            }
+          }
         );
-        data.map((value) => {
+        data.map(value => {
           switch (value.Type) {
             case "Objets abandonnés":
               return (value.StatusDanger = "Très Génant");
@@ -81,14 +81,14 @@ export const StatAnomalie = () => {
         const listOfTypes = new Set(
           data.map(({ StatusDanger: e }) => {
             return e;
-          }),
+          })
         );
         const clearedTypes = [];
-        listOfTypes.forEach((type) => {
+        listOfTypes.forEach(type => {
           clearedTypes.push({ type });
         });
         setDangerType(clearedTypes);
-        data.filter((value) => {
+        data.filter(value => {
           if (value.StatusDanger === "Génant") {
             setnumAnomalie1(++numAnomalie1);
           }
@@ -108,7 +108,7 @@ export const StatAnomalie = () => {
     result();
   }, []);
 
-  const colorAnomalie = (value) => {
+  const colorAnomalie = value => {
     switch (value) {
       case "Génant":
         return "#FFE664";
@@ -119,7 +119,7 @@ export const StatAnomalie = () => {
     }
   };
 
-  const sizeAnomalie = (value) => {
+  const sizeAnomalie = value => {
     return (value * 100) / results.length;
   };
 
@@ -136,12 +136,12 @@ export const StatAnomalie = () => {
           <AnomalieStat
             style={{
               backgroundColor: colorAnomalie(dangerType && dangerType[0].type),
-              width: `${sizeAnomalie(numAnomalie1 && numAnomalie1)}%`,
+              width: `${sizeAnomalie(numAnomalie1 && numAnomalie1)}%`
             }}
           ></AnomalieStat>
           <p
             style={{
-              background: colorAnomalie(dangerType && dangerType[0].type),
+              background: colorAnomalie(dangerType && dangerType[0].type)
             }}
           >
             {numAnomalie1 && numAnomalie1} {dangerType && dangerType[0].type}
@@ -151,12 +151,12 @@ export const StatAnomalie = () => {
           <AnomalieStat
             style={{
               backgroundColor: colorAnomalie(dangerType && dangerType[1].type),
-              width: `${sizeAnomalie(numAnomalie2 && numAnomalie2)}%`,
+              width: `${sizeAnomalie(numAnomalie2 && numAnomalie2)}%`
             }}
           ></AnomalieStat>
           <p
             style={{
-              background: colorAnomalie(dangerType && dangerType[1].type),
+              background: colorAnomalie(dangerType && dangerType[1].type)
             }}
           >
             {numAnomalie2 && numAnomalie2} {dangerType && dangerType[1].type}
@@ -166,12 +166,12 @@ export const StatAnomalie = () => {
           <AnomalieStat
             style={{
               backgroundColor: colorAnomalie(dangerType && dangerType[2].type),
-              width: `${sizeAnomalie(numAnomalie1 && numAnomalie3)}%`,
+              width: `${sizeAnomalie(numAnomalie1 && numAnomalie3)}%`
             }}
           ></AnomalieStat>
           <p
             style={{
-              background: colorAnomalie(dangerType && dangerType[2].type),
+              background: colorAnomalie(dangerType && dangerType[2].type)
             }}
           >
             {numAnomalie3 && numAnomalie3} {dangerType && dangerType[2].type}
