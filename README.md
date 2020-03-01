@@ -4,9 +4,9 @@ Project of SmartCity for Hetic.
 
 Personnes concernées par l'expertise Front: Wilem et Maksym.
 
-Map SVG: 
+Map SVG:
 
-- Nous avons préferer utiliser une map de SVG plûtot que d'utiliser une map importer comme celle de google ou encore Leaflet. Dans notre cas d'usage qui était d'indiquer la densité de population dans chaque arrondissement c'était beaucoup plus simple de modifier des SVG.
+- Nous avons préferer utiliser une map de SVG plûtot que d'utiliser une map importer comme celle de google ou encore Leaflet. Dans notre cas d'usage qui était d'indiquer la densité de population dans chaque arrondissement. L'utilisation d'une map en SVG nous semblaient plus pertinent, car plus permissif en terme de personnalisation.
 
 Librairies utilsées:
 
@@ -16,10 +16,8 @@ Librairies utilsées:
 
 - Nous avons utilser aussi les <em>Styled Component</em> pour nous former à cette librairie CSS contrairement au SCSS.
 
-Lien vers les librairies utilisées pour la partie front : 
+Lien vers les librairies utilisées pour la partie front :
 
 - Moment.js: https://momentjs.com/
 - Axios: https://github.com/axios/axios
 - Styled Component: https://styled-components.com/
-
-
