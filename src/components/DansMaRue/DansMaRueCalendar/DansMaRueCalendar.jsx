@@ -66,13 +66,12 @@ const CalendarContainer = styled.div`
 export const DansMaRueCalendar = ({ isOpenCalendar, setGetId }) => {
   let [clickedId, setClickedId] = useState(0);
 
-  const clickedAction = index => {
+  const clickedAction = (index) => {
     setClickedId(index);
   };
 
   return (
     <Container
-      onClick={() => console.log(isOpenCalendar)}
       style={
         isOpenCalendar
           ? { transform: "translate(40px, 0)", opacity: "1" }

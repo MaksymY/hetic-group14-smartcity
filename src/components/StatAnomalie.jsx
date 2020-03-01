@@ -63,6 +63,8 @@ export const StatAnomalie = () => {
             }
           }
         );
+
+        // filtering of the data by danger level
         data.map(value => {
           switch (value.Type) {
             case "Objets abandonnés":
@@ -87,6 +89,8 @@ export const StatAnomalie = () => {
         listOfTypes.forEach(type => {
           clearedTypes.push({ type });
         });
+
+        // adding quantity by dangerosity
         setDangerType(clearedTypes);
         data.filter(value => {
           if (value.StatusDanger === "Génant") {
@@ -99,8 +103,6 @@ export const StatAnomalie = () => {
             setnumAnomalie3(++numAnomalie3);
           }
         });
-        // console.log(numAnomalie1);
-        // console.log("itwork");
       } catch (error) {
         console.log(error);
       }

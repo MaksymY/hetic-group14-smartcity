@@ -40,32 +40,22 @@ export const MainMap = ({ setGetDistrict, getId, isChecked }) => {
 
     result();
   }, []);
+
+  // Most importent is to have same id for path and district name in data
   useEffect(() => {
     const test = () => {
-      const paths = Array.from(document.querySelectorAll("#mainMap path"));
-      // console.log(results && results);
-
+      const paths = Array.from(document.querySelectorAll("#mainMap path")); // selection of all path SVG
       results &&
         results.forEach(({ district, days }) => {
-          const el = paths.find((path) => path.id === district); // récupère l'élément SVG
-          /* const day = days.find((d) => d.date_id == getId); */
-          const day = days.find((d) => d.date_id == getId);
-          console.log(day);
-          el.setAttribute("class", `cha_${day.events}`);
-          /* days.map((value) => {
-            if (value.date_id == getId) {
-              // console.log(value);
-              el.classList.add(`cha_${value.events}`);
-            }
-          }); */
-          //récupère le jour
-          /*  el.setAttribute("class", `cha_${day.events}`); */ // ajoute la classe
+          const el = paths.find((path) => path.id === district); // select path by distric
+          const day = days.find((d) => d.date_id == getId); // get data correspending to selected date
+          el.setAttribute("class", `cha_${day.events}`); // adding class by number of event
         });
     };
     test();
   }, [getId]);
 
-  //il faut trouver un moyen de l'executer qu'une seule fois au mounted
+  // Adding of event on click in all path svg
   useEffect(() => {
     const paths = Array.from(document.querySelectorAll("#mainMap path"));
     paths.forEach((el) => {

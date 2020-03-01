@@ -29,7 +29,6 @@ const Container = styled.div`
 `;
 
 export const ModalEventContainer = ({ currentId, isOpen, setIsOpen }) => {
-  // console.log(isOpen);
   return (
     <Container
       style={
