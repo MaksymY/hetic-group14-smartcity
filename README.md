@@ -6,7 +6,7 @@ Personnes concernées par l'expertise Front: Wilem et Maksym.
 
 Map SVG:
 
-- Nous avons préferer utiliser une map de SVG plûtot que d'utiliser une map importer comme celle de google ou encore Leaflet. Dans notre cas d'usage qui était d'indiquer la densité de population dans chaque arrondissement. L'utilisation d'une map en SVG nous semblaient plus pertinent, car plus permissif en terme de personnalisation.
+- Nous avons préferer utiliser une map de SVG plûtot que d'utiliser une map importer comme celle de google ou encore Leaflet. Dans notre cas d'usage qui était d'indiquer la densité de population dans chaque arrondissement l'utilisation d'une map en SVG nous semblaient plus pertinent, car plus permissif en terme de personnalisation.
 
 Librairies utilsées:
 
